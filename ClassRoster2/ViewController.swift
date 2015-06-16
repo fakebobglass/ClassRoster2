@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   
   //first things first, create the table viewer.
@@ -23,7 +23,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     super.viewDidLoad()
     
     //lets set the deligate, the data source, as the tableview itself. Weird, but we gotta do it.
-    
+    //self.tableView.dataSource = self
+    //self.tableView.delegate = self
     
     //create some people!
     let jaime = Person(first: "Jaime", last: "Lannister")
@@ -37,7 +38,11 @@ class ViewController: UIViewController, UITableViewDataSource {
     
   }
   
- 
+  //show some magic, load (reload) some shit! Make it animated!
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    self.tableView.reloadData()
+  }
   
   //lets keep the number of cells the same number of people. Keeps things nice and tidy.
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,10 +55,11 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     //dequeue! Gotta dequeue. Keeps things light, I think. I don't know, I didn't dequeue in my other tableview apps before, but I'll trust you.
     
-    let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
     
     //now lets put some info in these mutha f'in cells in this mutha f'in tableview!
     let personToDisplay = self.people[indexPath.row]
+    
     cell.textLabel?.text = personToDisplay.firstName + " " + personToDisplay.lastName
     
     return cell
@@ -63,14 +69,17 @@ class ViewController: UIViewController, UITableViewDataSource {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
     //do the segue! WITNESS MEEE!!!
-    if segue.identifier == "ShowDetailViewController" {
+    if segue.identifier == "showDetailViewController" {
       
       let detailViewController = segue.destinationViewController as! DetailViewController
       
-      let indexPath = self.tableView.indexPathForSelectedRow()
-      let selectedRow = indexPath!.row
-      let selectedPerson = self.people[selectedRow]
+
+      var SelectedIndexPath = self.tableView.indexPathForSelectedRow()
+      if SelectedIndexPath != nil {
+        let selectedRow = SelectedIndexPath!.row
+        let selectedPerson = people[selectedRow]
         detailViewController.selectedPerson = selectedPerson
+      }
     }
   
 }

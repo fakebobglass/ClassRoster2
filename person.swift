@@ -14,6 +14,7 @@ class Person {
   
   init(first : String, last : String) {
     self.firstName = first
+    
     self.lastName = last
   }
 }

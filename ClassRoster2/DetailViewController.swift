@@ -8,17 +8,44 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate {
 
   //set up my labels here
   @IBOutlet var firstNameLabel: UILabel!
   @IBOutlet var lastNameLabel: UILabel!
+  @IBOutlet var firstNameTextField: UITextField!
+  @IBOutlet var lastNameTextField: UITextField!
   var selectedPerson : Person!
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      self.firstNameLabel.text = self.selectedPerson.firstName
-      self.lastNameLabel.text = self.selectedPerson.lastName
+      
+      self.firstNameTextField.delegate = self
+      self.lastNameTextField.delegate = self
+      self.firstNameTextField.tag = 0
+      self.lastNameTextField.tag = 1
+      
+      self.firstNameTextField.text = self.selectedPerson.firstName
+      self.lastNameTextField.text = self.selectedPerson.lastName
+      
+      func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+      }
+      func textFieldDidEndEditing(textField: UITextField) {
+        if textField.tag == 0 {
+          //set first name
+          self.selectedPerson.firstName = textField.text
+        } else {
+          //set last name
+          self.selectedPerson.lastName = textField.text
+        }
+        
+      }
+      
+      firstNameLabel.text = self.selectedPerson.firstName
+      lastNameLabel.text = self.selectedPerson.lastName
+      
 
 
   }
