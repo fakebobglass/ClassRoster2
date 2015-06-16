@@ -13,6 +13,11 @@
 		E831C0D41B2660BE00A2596F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E831C0D31B2660BE00A2596F /* Images.xcassets */; };
 		E831C0D71B2660BE00A2596F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E831C0D51B2660BE00A2596F /* LaunchScreen.xib */; };
 		E831C0E31B2660BE00A2596F /* ClassRoster2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831C0E21B2660BE00A2596F /* ClassRoster2Tests.swift */; };
+		E831C0ED1B2662BD00A2596F /* 169978.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E831C0EC1B2662BD00A2596F /* 169978.jpg */; };
+		E831C0F21B2684A400A2596F /* background_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E831C0EF1B2684A400A2596F /* background_2.jpg */; };
+		E831C0F51B29266E00A2596F /* person.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831C0F41B29266E00A2596F /* person.swift */; };
+		E831C0FA1B29333600A2596F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E831C0F91B29333600A2596F /* DetailViewController.swift */; };
+		E881B1DC1B2DCA2A00083B8B /* background_31.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E881B1DB1B2DCA2A00083B8B /* background_31.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		E831C0DC1B2660BE00A2596F /* ClassRoster2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassRoster2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E831C0E11B2660BE00A2596F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E831C0E21B2660BE00A2596F /* ClassRoster2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRoster2Tests.swift; sourceTree = "<group>"; };
+		E831C0EC1B2662BD00A2596F /* 169978.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 169978.jpg; sourceTree = "<group>"; };
+		E831C0EF1B2684A400A2596F /* background_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_2.jpg; sourceTree = "<group>"; };
+		E831C0F41B29266E00A2596F /* person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = person.swift; path = ../person.swift; sourceTree = "<group>"; };
+		E831C0F91B29333600A2596F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E881B1DB1B2DCA2A00083B8B /* background_31.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_31.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +88,14 @@
 			isa = PBXGroup;
 			children = (
 				E831C0CC1B2660BE00A2596F /* AppDelegate.swift */,
-				E831C0CE1B2660BE00A2596F /* ViewController.swift */,
-				E831C0D01B2660BE00A2596F /* Main.storyboard */,
+				E831C0F61B29284800A2596F /* Models */,
+				E831C0F71B29296100A2596F /* Views */,
+				E831C0F81B29296800A2596F /* Controller */,
 				E831C0D31B2660BE00A2596F /* Images.xcassets */,
 				E831C0D51B2660BE00A2596F /* LaunchScreen.xib */,
+				E831C0EF1B2684A400A2596F /* background_2.jpg */,
+				E881B1DB1B2DCA2A00083B8B /* background_31.jpg */,
+				E831C0EC1B2662BD00A2596F /* 169978.jpg */,
 				E831C0CA1B2660BE00A2596F /* Supporting Files */,
 			);
 			path = ClassRoster2;
@@ -110,6 +124,31 @@
 				E831C0E11B2660BE00A2596F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E831C0F61B29284800A2596F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E831C0F41B29266E00A2596F /* person.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E831C0F71B29296100A2596F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E831C0D01B2660BE00A2596F /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E831C0F81B29296800A2596F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E831C0F91B29333600A2596F /* DetailViewController.swift */,
+				E831C0CE1B2660BE00A2596F /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,7 +231,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E831C0F21B2684A400A2596F /* background_2.jpg in Resources */,
 				E831C0D21B2660BE00A2596F /* Main.storyboard in Resources */,
+				E831C0ED1B2662BD00A2596F /* 169978.jpg in Resources */,
+				E881B1DC1B2DCA2A00083B8B /* background_31.jpg in Resources */,
 				E831C0D71B2660BE00A2596F /* LaunchScreen.xib in Resources */,
 				E831C0D41B2660BE00A2596F /* Images.xcassets in Resources */,
 			);
@@ -213,7 +255,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E831C0CF1B2660BE00A2596F /* ViewController.swift in Sources */,
+				E831C0F51B29266E00A2596F /* person.swift in Sources */,
 				E831C0CD1B2660BE00A2596F /* AppDelegate.swift in Sources */,
+				E831C0FA1B29333600A2596F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +453,7 @@
 				E831C0E81B2660BE00A2596F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E831C0E91B2660BE00A2596F /* Build configuration list for PBXNativeTarget "ClassRoster2Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +462,7 @@
 				E831C0EB1B2660BE00A2596F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
